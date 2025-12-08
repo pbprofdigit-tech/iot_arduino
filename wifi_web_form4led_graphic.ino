@@ -99,7 +99,7 @@ void loop() {
         client.println("<!DOCTYPE HTML>");
         client.println("<html><body>");
         // output the value of each analog input pin
-        client.println("<h2>CONTROL LED 1 - 2 - 3 - 4</h2>");
+        client.println("<center><h1>CONTROL LED</h1></center><br><br>");
 
         // verifica la presenza ed elabora i parametri get/post
         if(comando.indexOf("led1=on")>=0) {
@@ -135,63 +135,55 @@ void loop() {
         // stampa valore aggiornato pin
         int legge1,legge2,legge3,legge4;
         legge1=digitalRead(2);
-        Serial.println(legge1);
-
         legge2=digitalRead(3);
-        Serial.println(legge2);
-
         legge2=digitalRead(4);
-        Serial.println(legge3);
-
         legge2=digitalRead(5);
-        Serial.println(legge4);
 
-        // fine stampa
+        client.println("<table width=\"50%\" align=\"center\"><tr>");
+        
+        if(legge1==0) {
+            client.println("<td align=center><form action=\"led1=on\" metdoh=\"post\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/verde_off.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        } else {
+            client.println("<td align=center><form action=\"led1=off\" metdoh=\"post\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/verde_on.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>"); 
+        }
 
+        if(legge2==0) {
+            client.println("<td align=center><form action=\"led2=on\" metdoh=\"get\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/rosa_off.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        } else {
+            client.println("<td align=center><form action=\"led2=off\" metdoh=\"get\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/rosa_on.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        }
 
-		if(legge1==0) {
-        client.println("<form action=\"led1=on\" metdoh=\"post\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/verde_off.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form> ");
-		} else {
-        client.println("<form action=\"led1=off\" metdoh=\"post\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/verde_on.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form><br>"); 
-		}
+        if(legge3==0) {
+            client.println("<td align=center><form action=\"led3=on\" metdoh=\"get\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/bianco_off.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        } else {
+            client.println("<td align=center><form action=\"led3=off\" metdoh=\"get\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/bianco_on.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        }
 
-		if(legge2==0) {
-        client.println("<form action=\"led2=on\" metdoh=\"get\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/rosa_off.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form> ");
-		} else {
-        client.println("<form action=\"led2=off\" metdoh=\"get\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/rosa_on.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form><br>");
-		}
+        if(legge4==0) {
+            client.println("<td align=center><form action=\"led4=on\" metdoh=\"get\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/giallo_off.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        } else {
+            client.println("<td align=center><form action=\"led4=off\" metdoh=\"get\">");
+            client.println("<input type=\"image\" src=\"https://www.ecovision.live/rest/giallo_on.jpg\" alt=\"Submit\" width=\"120\">");
+            client.println("</form></td>");
+        }
 
-		if(legge3==0) {
-        client.println("<form action=\"led3=on\" metdoh=\"get\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/bianco_off.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form> ");
-		} else {
-        client.println("<form action=\"led3=off\" metdoh=\"get\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/bianco_on.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form><br>");
-		}
-
-		if(legge4==0) {
-        client.println("<form action=\"led4=on\" metdoh=\"get\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/giallo_off.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form> ");
-		} else {
-        client.println("<form action=\"led4=off\" metdoh=\"get\">");
-        client.println("<input type=\"image\" src=\"http://www.ecovision.it/rest/giallo_on.jpg\" alt=\"Submit\" width=\"48\" height=\"48\">");
-        client.println("</form><br>");
-
-        client.println("</body></html>");
+        client.println("</tr><tr><td align=center><h2>1</h2></td><td align=center><h2>2</h2></td><td align=center><h2>3</h2></td><td align=center><h2>4</h2></td></tr></table></body></html>");
         break;
       }
-
     }
 
     delay(100);
