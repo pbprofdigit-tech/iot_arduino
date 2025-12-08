@@ -43,7 +43,7 @@ void loop() {
 
     Serial.println("Connesso al server!");
     // Invia richiesta HTTP POST
-    client.println("POST /rest/database_json.php HTTP/1.1");
+    client.println("POST /rest/txt_json.php HTTP/1.1");
     client.println("Host: www.publisun.it");
     client.println("Content-Type: application/json");
     client.print("Content-Length: ");

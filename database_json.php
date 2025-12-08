@@ -8,12 +8,6 @@ $potenziometro=$input_data2->potenziometro;
 $pulsante1=$input_data2->pulsante1;
 $pulsante2=$input_data2->pulsante2;
 
-
-$temperatura=1;
-$potenziometro=2;
-$pulsante1=3;
-$pulsante2=4;
-
 // Si connette al database
 $servername = "31.11.39.40";
 $username = "Sql1663447";
