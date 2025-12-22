@@ -1,16 +1,22 @@
 #include <WiFiS3.h>
 
 // Credenziali WiFi
-const char* ssid = "TIM-45796875";
-const char* pass = "c3KGfuCQPY4Gp7cARdkZXA7Q";
+const char* ssid = "****";
+const char* pass = "****";
 
 
-char server[] = "www.publisun.it"; // Host
+char server[] = "www.miosito.it"; // Host
 int port = 80;
 
 WiFiClient client;
 
 void setup() {
+	
+  pinMode(6,INPUT);
+  pinMode(7,INPUT);
+  pinMode(8,INPUT);
+  pinMode(A0,INPUT);
+
   Serial.begin(9600);
   while (!Serial);
 
@@ -37,14 +43,29 @@ void setup() {
 
 void loop() {
 
+  int p1,p2,p3;
+  float temp;
+
   if (client.connect(server, port)) {
+
+    String message = "", s1="Spento",s2="Spento";
+    p1=digitalRead(6);
+    p2=digitalRead(7);
+    p3=analogRead(A0);
+
+    temp = dht.readTemperature();
+
+    if(p1==1) { s1="Acceso"; }
+    if(p2==1) { s2="Acceso"; }
+
     // Variabile che contiene i dati in json
-    const char* body = "{\"temperatura\":1,\"potenziometro\":2,\"pulsante1\":3,\"pulsante2\":4}";
+    const char* body = "{\"temperatura\":"+String(temp)+ ",\"potenziometro\":"+String(p3)+",\"pulsante1\":"+String(s1)+",\"pulsante2\":"+String(s2)+"}";
+
 
     Serial.println("Connesso al server!");
     // Invia richiesta HTTP POST
     client.println("POST /rest/database_json.php HTTP/1.1");
-    client.println("Host: www.publisun.it");
+    client.println("Host: www.miosito.it");
     client.println("Content-Type: application/json");
     client.print("Content-Length: ");
     client.println(strlen(body));
