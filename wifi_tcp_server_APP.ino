@@ -1,8 +1,8 @@
 #include <WiFiS3.h>
 
 // Credenziali WiFi
-const char* ssid     = "TIM-45796875";
-const char* password = "c3KGfuCQPY4Gp7cARdkZXA7Q";
+const char* ssid = "****";
+const char* password = "****";
 
 WiFiServer server(5000);   // Porta TCP in ascolto (modificabile)
 WiFiClient client;
