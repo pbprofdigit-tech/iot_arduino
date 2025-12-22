@@ -1,8 +1,8 @@
 #include <WiFiS3.h>
 
 // Credenziali WiFi
-const char* ssid     = "TIM-45796875";
-const char* password = "c3KGfuCQPY4Gp7cARdkZXA7Q";
+const char* ssid = "****";
+const char* password = "****";
 
 // IP del server nella LAN
 const char* serverIP = "192.168.1.27";  
