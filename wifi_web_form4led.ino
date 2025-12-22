@@ -1,8 +1,8 @@
 #include <SPI.h>
 #include <WiFiS3.h>
 
-const char* ssid     = "TIM-45796875";
-const char* pass = "c3KGfuCQPY4Gp7cARdkZXA7Q";
+const char* ssid = "****";
+const char* pass = "****";
 
 int keyIndex = 0;
 
@@ -192,4 +192,5 @@ void loop() {
 
   }
 }
+
 
