@@ -1,8 +1,8 @@
 #include <WiFiS3.h>
 
 // Credenziali WiFi
-const char* ssid = "TIM-45796875";
-const char* pass = "c3KGfuCQPY4Gp7cARdkZXA7Q";
+const char* ssid = "****";
+const char* pass = "****";
 
 
 char server[] = "www.publisun.it"; // Host
@@ -73,3 +73,4 @@ void loop() {
 
 
 }
+
