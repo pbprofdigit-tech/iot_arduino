@@ -21,6 +21,7 @@ void setup() {
   pinMode(7,INPUT);
   pinMode(A0,INPUT);
 
+  dht.begin();
   Serial.begin(9600);
   while (!Serial);
 
@@ -97,4 +98,5 @@ void loop() {
   delay(5000);
 
 }
+
 
