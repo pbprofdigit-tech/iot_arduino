@@ -5,8 +5,8 @@ import java.net.*;
 public class socket_client{ 
 	public static void main(String[] a){
 		ClientStr cliente = new ClientStr();
-		cliente.connetti();
-		cliente.comunica();
+		cliente.Connessione();
+		cliente.Comunicazione();
 	}
 }	
 
@@ -24,7 +24,7 @@ public class ClientStr {
 
 		}
 	
-	public Socket connetti () {
+	public Socket Connessione () {
 		
 		System.out.println("CLIENT in esecuzione");
 		try {
@@ -50,7 +50,7 @@ public class ClientStr {
 			
 	}
 
-	public void comunica () {
+	public void Comunicazione () {
 
 		while(true){
 			try {
