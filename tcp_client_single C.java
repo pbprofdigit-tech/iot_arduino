@@ -4,9 +4,9 @@ import java.net.*;
 
 public class socket_client{ 
 	public static void main(String[] a){
-		ClientStr cliente = new ClientStr();
-		cliente.Connessione();
-		cliente.Comunicazione();
+		ClientStr client_01 = new ClientStr();
+		client_01.Connessione();
+		client_01.Comunicazione();
 	}
 }	
 
