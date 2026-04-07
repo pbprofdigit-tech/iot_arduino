@@ -4,9 +4,9 @@ import java.util.*;
 
 public class socket_server { 
 	public static void main(String[] a){
-		ServerStr servente = new ServerStr();
-		servente.attendi();
-		servente.comunica();
+		ServerStr Server_01 = new ServerStr();
+		Server_01.Connessione();
+		Server_01.Comunicazione();
 	}
 }	
 
@@ -21,7 +21,7 @@ public class ServerStr {
 		public ServerStr () { //costruttore 
 	}
 	
-	public Socket attendi () {
+	public Socket Connessione () {
 		try {
 			server =new ServerSocket(5000);
 			client=server.accept();
@@ -37,7 +37,7 @@ public class ServerStr {
 		return client;
 	}
 
-	public void comunica () {
+	public void Comunicazione () {
 		while (true) {
 			try {
 				stringaRicevuta = inDalClient.readLine();

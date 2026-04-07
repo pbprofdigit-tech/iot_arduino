@@ -3,9 +3,9 @@ import java.net.*;
 
 public class socket_client{ 
 	public static void main(String[] a){
-		ClientStr cliente = new ClientStr();
-		cliente.connetti();
-		cliente.comunica();
+		ClientStr Client_01 = new ClientStr();
+		Client_01.Connessione();
+		Client_01.Comunicazione();
 	}
 }	
 
@@ -22,7 +22,7 @@ public class ClientStr {
 		public ClientStr () { //costruttore 
 	}
 	
-	public Socket connetti () {
+	public Socket Connessione () {
 		System.out.println("CLIENT in esecuzione");
 		try {
 			tastiera=new BufferedReader(new InputStreamReader(System.in));
@@ -43,7 +43,7 @@ public class ClientStr {
 		return miosocket;
 	}
 
-	public void comunica () {
+	public void Comunicazione () {
 		while(true){
 			try {
 				System.out.println("Stringa da trasmettere:");
