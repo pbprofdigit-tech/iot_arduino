@@ -3,8 +3,8 @@
 #include "Arduino_LED_Matrix.h"
 
 // Credenziali WiFi
-const char* ssid = "****";
-const char* password = "****";
+const char* ssid     = "TIM-45796875";
+const char* password = "c3KGfuCQPY4Gp7cARdkZXA7Q";
 
 WiFiServer server(5000);   // Porta TCP in ascolto (modificabile)
 WiFiClient client;
@@ -63,28 +63,28 @@ void loop() {
     Serial.print("Ricevuto: ");
     Serial.println(incoming);
 
-    if(incoming.indexOf("L1=on")>=0){ 
+    if(incoming.indexOf("l1=on")>=0){ 
       digitalWrite(2,HIGH);
     }
-    if(incoming.indexOf("L1=off")>=0){ 
+    if(incoming.indexOf("l1=off")>=0){ 
       digitalWrite(2,LOW);
     }
-    if(incoming.indexOf("L2=on")>=0){ 
+    if(incoming.indexOf("l2=on")>=0){ 
       digitalWrite(3,HIGH);
     }
-    if(incoming.indexOf("L2=off")>=0){ 
+    if(incoming.indexOf("l2=off")>=0){ 
       digitalWrite(3,LOW);
     }
-    if(incoming.indexOf("L3=on")>=0){ 
+    if(incoming.indexOf("l3=on")>=0){ 
       digitalWrite(4,HIGH);
     }
-    if(incoming.indexOf("L3=off")>=0){ 
+    if(incoming.indexOf("l3=off")>=0){ 
       digitalWrite(4,LOW);
     }
-    if(incoming.indexOf("L4=on")>=0){ 
+    if(incoming.indexOf("l4=on")>=0){ 
       digitalWrite(5,HIGH);
     }
-    if(incoming.indexOf("L4=off")>=0){ 
+    if(incoming.indexOf("l4=off")>=0){ 
       digitalWrite(5,LOW);
     }
 
