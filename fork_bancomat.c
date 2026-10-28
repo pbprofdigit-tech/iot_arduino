@@ -16,9 +16,6 @@ int main() {
 		sleep(1);
 		printf("Luca inserisce la carta di credito\n");
 		sleep(1);
-		printf("Luca scrive il codice\n");
-		sleep(1);
-		printf("Luca Scrive l'importo di 150 euro\n");
 		sleep(1);
 		printf("Luca Preleva i contanti\n");
 		
@@ -29,9 +26,22 @@ mo scrive il codice\n");
 		printf("Massimo Scrive l'importo di 150 euro\n");
 		sleep(1);
 		printf("Massimo Preleva i contanti\n");
+aaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaa
 
 
     }
 
     return 0;
 }
+
+sgg
+dg
+dgdsfg
+dsg
+	
