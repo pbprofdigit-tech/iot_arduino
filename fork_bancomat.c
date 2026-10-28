@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
-
+xxxxxxxxxxxxxxxxxxxxx
 int main() {
     pid_t pid;
     int numero;
@@ -24,18 +24,13 @@ int main() {
 		
     } else {
         // Processo padre
-		sleep(1);
-		printf("Massimo arriva al primo bancomat\n");
-		sleep(1);
-		printf("Massimo inserisce la carta di credito\n");
-		sleep(1);
-		printf("Massimo scrive il codice\n");
+mo scrive il codice\n");
 		sleep(1);
 		printf("Massimo Scrive l'importo di 150 euro\n");
 		sleep(1);
 		printf("Massimo Preleva i contanti\n");
 
-//        wait(NULL);
+
     }
 
     return 0;
